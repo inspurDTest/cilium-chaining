@@ -10,7 +10,6 @@ image:
 	@echo "Build Image:  $(E2E_REGISTRY):$(E2E_TAG) "
 	docker buildx build  --build-arg GIT_COMMIT_VERSION=$(GIT_COMMIT_VERSION) \
 			--build-arg GIT_COMMIT_TIME=$(GIT_COMMIT_TIME) \
-			--build-arg VERSION=$(GIT_COMMIT_VERSION) \
 			--file Dockerfile \
-			--output type=docker --tag  $(E2E_REGISTRY):$(E2E_TAG) . ; \
+			--output type=docker --tag  docker.io/inspurwyd:$(E2E_TAG) . ; \
 	echo "image build success" ; \
