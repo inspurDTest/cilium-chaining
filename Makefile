@@ -4,6 +4,7 @@ E2E_TAG := latest
 GIT_COMMIT_VERSION = $(shell git show -s --format='format:%H')
 GIT_COMMIT_TIME = $(shell git show -s --format='format:%aI')
 
+SHELL=/bin/bash -o pipefail -o errexit
 
 .PHONY: image
 image:
