@@ -9,7 +9,7 @@ FROM --platform=$TARGETPLATFORM ${CILIUM_BPFTOOL_IMAGE} as bpftool-dist
 FROM --platform=$TARGETPLATFORM ${CILIUM_IPROUTE2_IMAGE} as iproute2-dist
 FROM --platform=$TARGETPLATFORM ${CILIUM_IPTABLES_IMAGE} as iptables-dist
 
-FROM --platform=$TARGETPLATFORM quay.io/cilium/cilium-builder:0a47f410d147719a579cd3c069fd0e4a84b8b055@sha256:191db32a7cb4c5143a6fcc8a83ffd9a701925bed7523e6628dc75cbadf694858 as cilium-builder
+FROM --platform=$TARGETPLATFORM quay.io/cilium/cilium-builder:f78a4829071d6707d7ca2c9b8e7596432ba5483b@sha256:8cf9f3fd61340af5b1f84a2343343505ff44be77ec8989cf5cba685c14bb063d as cilium-builder
 ARG GOPROXY
 ENV GOPROXY $GOPROXY
 ARG CILIUM_SHA=""
