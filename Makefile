@@ -11,6 +11,7 @@ image:
 	docker buildx build  --build-arg GIT_COMMIT_VERSION=$(GIT_COMMIT_VERSION) \
                         --no-cache \
 		        --push \
+                        --progress plain \
 			--build-arg GIT_COMMIT_TIME=$(GIT_COMMIT_TIME) \
 			--tag  docker.io/inspurwyd/cilium-chain:$(E2E_TAG) . ; \
 	echo "image build and push success" ; \
