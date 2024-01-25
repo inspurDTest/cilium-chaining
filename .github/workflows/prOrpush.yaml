@@ -1,0 +1,32 @@
+name: prOrPush
+
+on:
+  pull_request:
+    branches:
+      - "main"
+
+  push:
+    branches:
+      - "main"
+
+permissions:
+  contents: read
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3.0.0
+
+      - name: login hub.docker
+        run: |
+          docker login -u inspurwyd  -p  dckr_pat_yMRt21vCZj0PlDl14xJiqSOHeVg
+
+      - name: build & push images
+        run: |
+             make  image
