@@ -22,8 +22,7 @@ ARG GIT_COMMIT_TIME
 ENV GIT_COMMIT_TIME=${GIT_COMMIT_TIME}
 RUN rm -rf cilium
 ENV GIT_TAG=v1.14.6
-RUN git clone -b $GIT_TAG --depth 1 https://github.com/cilium/cilium.git && \
-    cd cilium 
+RUN git clone -b $GIT_TAG --depth 1 https://github.com/cilium/cilium.git 
 COPY patches /patches
 RUN cd cilium && git apply /patches/*.patch
 ARG NOSTRIP
