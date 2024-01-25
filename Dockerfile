@@ -21,11 +21,9 @@ ENV GIT_COMMIT_VERSION=${GIT_COMMIT_VERSION}
 ARG GIT_COMMIT_TIME
 ENV GIT_COMMIT_TIME=${GIT_COMMIT_TIME}
 RUN rm -rf cilium
-ENV GIT_TAG=v1.12.7
-ENV GIT_COMMIT=67190636f1d5a7a443ea0bda585b215e7650dd25
+ENV GIT_TAG=v1.14.6
 RUN git clone -b $GIT_TAG --depth 1 https://github.com/cilium/cilium.git && \
-    cd cilium && \
-    [ "`git rev-parse HEAD`" = "${GIT_COMMIT}" ]
+    cd cilium 
 COPY patches /patches
 RUN cd cilium && git apply /patches/*.patch
 ARG NOSTRIP
