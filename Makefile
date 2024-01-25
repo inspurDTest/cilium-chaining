@@ -9,7 +9,8 @@ GIT_COMMIT_TIME = $(shell git show -s --format='format:%aI')
 image:
 	@echo "Build Image:  $(E2E_REGISTRY):$(E2E_TAG) "
 	docker buildx build  --build-arg GIT_COMMIT_VERSION=$(GIT_COMMIT_VERSION) \
+                        --no-cache \
+		        --push \
 			--build-arg GIT_COMMIT_TIME=$(GIT_COMMIT_TIME) \
-			--file Dockerfile \
-			--output type=docker --tag  docker.io/inspurwyd:$(E2E_TAG) . ; \
+			--tag  docker.io/inspurwyd:$(E2E_TAG)  ; \
 	echo "image build success" ; \
