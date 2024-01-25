@@ -12,7 +12,7 @@ on:
       - reopened
   push:
     branches:
-      - main
+      - main1
 
 jobs:
   get_ref:
