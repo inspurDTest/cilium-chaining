@@ -3,7 +3,7 @@ name: Auto Build Latest Image
 on:
   push:
     branches:
-      - main
+      - main1
 
 permissions: write-all
 
