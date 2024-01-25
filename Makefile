@@ -4,6 +4,15 @@ E2E_TAG := latest
 GIT_COMMIT_VERSION = $(shell git show -s --format='format:%H')
 GIT_COMMIT_TIME = $(shell git show -s --format='format:%aI')
 
+.DEFAULT_GOAL:=help
+
+.EXPORT_ALL_VARIABLES:
+
+ifndef VERBOSE
+.SILENT:
+endif
+
+# set default shell
 SHELL=/bin/bash -o pipefail -o errexit
 
 .PHONY: image
